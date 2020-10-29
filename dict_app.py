@@ -10,6 +10,12 @@ def def_word(word):
     if word in data.keys():
         return "\n".join(data[word])
 
+    elif word.title() in data.keys():
+        return "\n".join(data[word.title()])
+
+    elif word.upper() in data.keys():
+        return "\n".join(data[word.upper()])
+
     elif len(close_match_word(word)) > 0:
         close_word = "".join(close_match_word(word))
         answer = input(

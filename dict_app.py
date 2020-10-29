@@ -1,8 +1,11 @@
 import json
 from difflib import get_close_matches
+import time
 
+start_time = time.time()
 data = json.load(open("data.json"))
 word = input("Enter word: ").lower()
+start_time = time.time()
 
 
 def def_word(word):
@@ -34,3 +37,4 @@ def close_match_word(word):
 
 
 print(def_word(word))
+print(f"{time.time() - start_time} seconds")
